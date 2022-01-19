@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My page</title>
+  </head>
+  <body>
+    <h1> Hey! from Blog Home page</h1>
+    <h2> I have {{ blogs.count }} blog{{ blogs.count | pluralize}}</h2>
+        {% for blog in blogs %}
+
+          <a href="{% url 'blog:detail_blog' blog.id %}">{{ blog.title }}</a>
+          <br/><!--img src ={{ project.image.url }} /-->
+          <p> {{ blog.description }} </p>
+          <br/> {{ blog.date| date:"d-m-Y" }} </p>
+
+        {% endfor %}
+
+
+  </body>
+</html>
